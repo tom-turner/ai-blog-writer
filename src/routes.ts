@@ -102,8 +102,8 @@ router.get('/api/get-api-key', async (req: Request, res: Response) => {
     });
 });
 
-router.use('/', (req: Request, res: Response) => {
-    res.render('index');
+router.get('/', (req: Request, res: Response) => {
+    res.send(`To get started, please visit the documentation on <a href="https://github.com/tom-turner/ai-blog-writer" style={{ color: 'white' }}>Github</a>`);
 });
 
 export default router;

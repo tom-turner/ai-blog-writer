@@ -10,9 +10,9 @@ To get started, clone the repository and run `npm ci` to clean install the depen
 
 Put the following environment variables in a .env file in the root directory of the project: 
 ``` 
-OPENAI_API_KEY
-SECRET
-PORT
+OPENAI_API_KEY='your-api-key'
+SECRET='your-secret'
+PORT=3000
 ```
 
 ## API Endpoints
@@ -20,7 +20,7 @@ PORT
 The following are the API endpoints that are available:
 
 ### Generate Blog By Broad Topic (GET)
-**Endpoint:** `/api/generate-blog-by-broad-topic/:topic?exclude=topic1&exclude=topic2`
+**Endpoint:** `/api/generate-by-broad-topic/:topic?exclude=topic1&exclude=topic2`
 This endpoint automatically calls keyword research, generates a topic, generates an outline, title, and blog content and returns it as a JSON object. It takes a broad topic as a parameter and a list of topics you wish to exclude from the blog in the query. As this endpoint typically takes a while to generate the blog, it is recommended to use the other endpoints to generate the blog programmatically.
 
 **Response Body:**
