@@ -4,7 +4,16 @@ This is a Node.js application that generates a blog using various API endpoints.
 
 ## Getting Started
 
-To get started, clone the repository and run `npm install` to install the dependencies. Then run `npm start` to start the server. The server will be running on port 3000.
+To get started, clone the repository and run `npm ci` to clean install the dependencies. Then run `npm run build` to build the application. Finally, run `npm run start` to start the application.
+
+## ENV Variables
+
+Put the following environment variables in a .env file in the root directory of the project: 
+``` 
+OPENAI_API_KEY
+SECRET
+PORT
+```
 
 ## API Endpoints
 
