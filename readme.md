@@ -12,7 +12,8 @@ The following are the API endpoints that are available:
 
 ### Generate Blog By Broad Topic (GET)
 **Endpoint:** `/api/generate-blog-by-broad-topic/:topic?exclude=topic1&exclude=topic2`
-This endpoint generates a blog given a broad topic. It also takes a list of topics you wish to exclude from the blog. This endpoint takes a very long time to generate content. Be patient and set a high request timeout > 60s.
+This endpoint automatically calls keyword research, generates a topic, generates an outline, title, and blog content and returns it as a JSON object. It takes a broad topic as a parameter and a list of topics you wish to exclude from the blog in the query. As this endpoint typically takes a while to generate the blog, it is recommended to use the other endpoints to generate the blog programmatically.
+
 **Response Body:**
 
 ```json
@@ -51,6 +52,7 @@ This endpoint generates a blog given a broad topic. It also takes a list of topi
 ### Generate Keyword Research (POST)
 **Endpoint:** `/api/generate-keyword-research`
 This endpoint generates a list of keywords based on a broad topic, blog title, and keyword exclusions.
+
 **Request Body:**
 
 ```json
@@ -71,6 +73,7 @@ This endpoint generates a list of keywords based on a broad topic, blog title, a
 ### Generate Topics (POST)
 **Endpoint:** `/api/generate-topics`
 This endpoint generates a list of topics based on a broad topic, keywords, and keyword exclusions.
+
 **Request Body:**
 
 ```json
@@ -92,6 +95,7 @@ This endpoint generates a list of topics based on a broad topic, keywords, and k
 ### Generate Outline (POST)
 **Endpoint:** `/api/generate-outline`
 This endpoint generates a blog outline based on a broad topic.
+
 **Request Body:**
 
 ```json
@@ -111,6 +115,7 @@ This endpoint generates a blog outline based on a broad topic.
 ### Generate Title (POST)
 **Endpoint:** `/api/generate-title`
 This endpoint generates a blog title based on an outline, keyword exclusions, and featured keywords.
+
 **Request Body:**
 
 ```json
@@ -132,6 +137,7 @@ This endpoint generates a blog title based on an outline, keyword exclusions, an
 ### Generate Headings (POST)
 **Endpoint:** `/api/generate-headings`
 This endpoint generates a list of headings for a blog based on an outline, topic, title, and keywords.
+
 **Request Body:**
 
 ```json
@@ -167,6 +173,7 @@ This endpoint generates a list of headings for a blog based on an outline, topic
 ### Generate Paragraph (POST)
 **Endpoint:** `/api/generate-paragraph`
 This endpoint generates a paragraph for a blog give a list of headings, an index, total headings length, an array representing the blog content, keywords, and keyword exclusions.
+
 **Request Body:**
 
 ```json
@@ -220,6 +227,7 @@ This endpoint generates a paragraph for a blog give a list of headings, an index
 ### Generate Blog Content (POST)
 **Endpoint:** `/api/generate-blog-content`
 This endpoint generates a blog content given a broad topic, blog title, keywords, keyword exclusions, and featured keywords. It may take a while to generate the blog.
+
 **Request Body:**
 
 ```json
@@ -260,6 +268,7 @@ This endpoint generates a blog content given a broad topic, blog title, keywords
 ### Generate Meta Tags (POST)
 **Endpoint:** `/api/generate-meta-tags`
 This endpoint generates meta tags for a blog given a blog title, blog outline, keywords, keyword exclusions, and featured keywords.
+
 **Request Body:**
 
 ```json
