@@ -12,6 +12,7 @@ declare module 'express-session' {
 const app = express();
 const app_secret = process.env.SECRET as string;
 const dev = process.env.NODE_ENV !== 'production';
+const port = process.env.PORT || 5000;
 
 app.use(session({
   secret: app_secret,
@@ -23,6 +24,6 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json())
 app.use(routes);
 
-app.listen(5000, () => {
-  console.log('Application started on port 5000!');
+app.listen(port, () => {
+  console.log(`Application started on port ${port}!`);
 });
